@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selección de Analíticas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h3 {
+            color: #2E86C1;
+        }
+        .section {
+            border: 1px solid #CCC;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <h1>Selección de analíticas</h1>
+
+    <!-- Formulario con subapartados para las categorías de analíticas -->
+    <form id="analysisForm">
+        <div class="section">
+            <h3>Analítica básica</h3>
+            <input type="checkbox" name="basic" value="Hemograma"> Hemograma<br>
+            <input type="checkbox" name="basic" value="Glucosa"> Glucosa<br>
+            <input type="checkbox" name="basic" value="Sodio"> Sodio<br>
+            <input type="checkbox" name="basic" value="Potasio"> Potasio<br>
+            <input type="checkbox" name="basic" value="Creatinina"> Creatinina<br>
+            <input type="checkbox" name="basic" value="GOT/GPT/GGT"> GOT/GPT/GGT<br>
+            <input type="checkbox" name="basic" value="Bilirrubina"> Bilirrubina<br>
+            <input type="checkbox" name="basic" value="Calcio"> Calcio<br>
+            <input type="checkbox" name="basic" value="Proteínas"> Proteínas<br>
+            <input type="checkbox" name="basic" value="Coagulación"> Coagulación<br>
+            <input type="checkbox" name="basic" value="PCR"> PCR<br>
+            <input type="checkbox" name="basic" value="Procalcitonina"> Procalcitonina<br>
+            <input type="checkbox" name="basic" value="Pro BNP"> Pro BNP<br>
+            <input type="checkbox" name="basic" value="D-Dímero"> D-Dímero<br>
+        </div>
+
+        <div class="section">
+            <h3>Analítica de ingreso</h3>
+            <input type="checkbox" name="admission" value="THS"> THS<br>
+            <input type="checkbox" name="admission" value="T4"> T4<br>
+            <input type="checkbox" name="admission" value="T3"> T3<br>
+            <input type="checkbox" name="admission" value="Colesterol total, HDL y LDL"> Colesterol total, HDL y LDL<br>
+            <input type="checkbox" name="admission" value="Triglicéridos"> Triglicéridos<br>
+            <input type="checkbox" name="admission" value="Vitamina B12"> Vitamina B12<br>
+            <input type="checkbox" name="admission" value="Velocidad de sedimentación"> Velocidad de sedimentación<br>
+            <input type="checkbox" name="admission" value="Ácido fólico"> Ácido fólico<br>
+            <input type="checkbox" name="admission" value="Homocisteína"> Homocisteína<br>
+        </div>
+
+        <div class="section">
+            <h3>Punción lumbar</h3>
+            <input type="checkbox" name="lumbar" value="Leucocitos, hematíes, glucosa, proteínas"> Leucocitos, hematíes, glucosa, proteínas<br>
+            <input type="checkbox" name="lumbar" value="Índices de inmunoglobulinas y bandas oligoclonales IgG e IgM en suero y LCR"> Índices de inmunoglobulinas y bandas oligoclonales IgG e IgM en suero y LCR<br>
+            <input type="checkbox" name="lumbar" value="VDRL"> VDRL<br>
+            <input type="checkbox" name="lumbar" value="Lyme"> Lyme<br>
+            <input type="checkbox" name="lumbar" value="Cultivo de aerobios"> Cultivo de aerobios<br>
+            <input type="checkbox" name="lumbar" value="Cultivo de micobacterias"> Cultivo de micobacterias<br>
+            <input type="checkbox" name="lumbar" value="Cultivo de hongos"> Cultivo de hongos<br>
+            <input type="checkbox" name="lumbar" value="Filmarray de meningoencefalitis"> Filmarray de meningoencefalitis<br>
+            <input type="checkbox" name="lumbar" value="Anticuerpos anti NMO en suero y LCR"> Anticuerpos anti NMO en suero y LCR<br>
+            <input type="checkbox" name="lumbar" value="Anticuerpos anti MOG en suero y LCR"> Anticuerpos anti MOG en suero y LCR<br>
+            <input type="checkbox" name="lumbar" value="Anticuerpos onconeuronales en suero y LCR"> Anticuerpos onconeuronales en suero y LCR<br>
+            <input type="checkbox" name="lumbar" value="Anticuerpos anti receptor de NMDA en suero y LCR"> Anticuerpos anti receptor de NMDA en suero y LCR<br>
+            <input type="checkbox" name="lumbar" value="Anticuerpos anti canal de potasio LgI1/CASPR2 en suero y LCR"> Anticuerpos anti canal de potasio LgI1/CASPR2 en suero y LCR<br>
+            <input type="checkbox" name="lumbar" value="Anticuerpos antigangliósidos en suero y LCR"> Anticuerpos antigangliósidos en suero y LCR<br>
+            <input type="checkbox" name="lumbar" value="Proteína 14-3-3"> Proteína 14-3-3<br>
+            <input type="checkbox" name="lumbar" value="Péptido beta amiloide, proteína Tau"> Péptido beta amiloide, proteína Tau<br>
+            <input type="checkbox" name="lumbar" value="ECA (enzima convertidora de la angiotensina)"> ECA (enzima convertidora de la angiotensina)<br>
+            <input type="checkbox" name="lumbar" value="ADA (adenosin desaminasa)"> ADA (adenosin desaminasa)<br>
+        </div>
+
+        <div class="section">
+            <h3>Analítica hematología</h3>        
+            <input type="checkbox" name="hematology" value="Antitrombina III"> Antitrombina III<br>
+            <input type="checkbox" name="hematology" value="Lipoproteína A"> Lipoproteína A<br>
+            <input type="checkbox" name="hematology" value="Homocisteína"> Homocisteína<br>
+            <input type="checkbox" name="hematology" value="Proteína C"> Proteína C<br>
+            <input type="checkbox" name="hematology" value="Proteína S"> Proteína S<br>
+            <input type="checkbox" name="hematology" value="Resistencia a la proteína C activada"> Resistencia a la proteína C activada<br>
+            <input type="checkbox" name="hematology" value="Factor VIII"> Factor VIII<br>
+            <input type="checkbox" name="hematology" value="Anticoagulante lúpico"> Anticoagulante lúpico<br>
+            <input type="checkbox" name="hematology" value="Anticuerpos anticardiolipina IgG e IgM"> Anticuerpos anticardiolipina IgG e IgM<br>
+            <input type="checkbox" name="hematology" value="Anticuerpos anti B2 glicoproteína IgG e IgM"> Anticuerpos anti B2 glicoproteína IgG e IgM<br>
+            <input type="checkbox" name="hematology" value="Mutación del gen de la protrombina"> Mutación del gen de la protrombina<br>
+            <input type="checkbox" name="hematology" value="Mutación del gen del factor V de Leyden"> Mutación del gen del factor V de Leyden<br>
+            <input type="checkbox" name="hematology" value="Mutación del gen de la homocisteína"> Mutación del gen de la homocisteína<br>
+        </div>
+
+      <div class="section">
+          <h3>Analítica extensa</h3>
+          <input type="checkbox" name="determination" value="Anticuerpos antinucleares ANA"> Anticuerpos antinucleares ANA<br>
+          <input type="checkbox" name="determination" value="Factor reumatoide"> Factor reumatoide<br>
+          <input type="checkbox" name="determination" value="ANCA (p-ANCA y c ANCA)"> ANCA (p-ANCA y c ANCA)<br>
+          <input type="checkbox" name="determination" value="Anticuerpos anti Ro y anti La"> Anticuerpos anti Ro y anti La<br>
+          <input type="checkbox" name="determination" value="ECA"> ECA<br>
+          <input type="checkbox" name="determination" value="Complemento"> Complemento<br>
+          <input type="checkbox" name="determination" value="Proteinograma"> Proteinograma<br>
+          <input type="checkbox" name="determination" value="Espectro electroforético"> Espectro electroforético<br>
+          <input type="checkbox" name="determination" value="Inmunofijación"> Inmunofijación<br>
+          <input type="checkbox" name="determination" value="Cuantificación de inmunoglobulinas"> Cuantificación de inmunoglobulinas<br>
+          <input type="checkbox" name="determination" value="Crioglobulinas"> Crioglobulinas<br>
+          <input type="checkbox" name="determination" value="Anticuerpos antigliadina, antiendomisio, antirreticulina y antitransglutaminasa"> Anticuerpos antigliadina, antiendomisio, antirreticulina y antitransglutaminasa<br>
+          <input type="checkbox" name="determination" value="Anticuerpos onconeuronales"> Anticuerpos onconeuronales<br>
+          <input type="checkbox" name="determination" value="Anticuerpos anti receptor de acetilcolina"> Anticuerpos anti receptor de acetilcolina<br>
+          <input type="checkbox" name="determination" value="Anticuerpos anti MUSK"> Anticuerpos anti MUSK<br>
+          <input type="checkbox" name="determination" value="Lúes"> Lúes<br>
+          <input type="checkbox" name="determination" value="Lyme"> Lyme<br>
+          <input type="checkbox" name="determination" value="VIH"> VIH<br>
+          <input type="checkbox" name="determination" value="Quantiferon"> Quantiferon<br>
+          <input type="checkbox" name="determination" value="Mantoux"> Mantoux<br>
+          <input type="checkbox" name="determination" value="Cobre y ceruloplasmina"> Cobre y ceruloplasmina<br>
+          <input type="checkbox" name="determination" value="Serología VEB IgG e IgM"> Serología VEB IgG e IgM<br>
+          <input type="checkbox" name="determination" value="Vitamina D"> Vitamina D<br>
+      </div>
+
+
+        <button type="button" onclick="generatePDF()">Generar PDF</button>
+    </form>
+
+    <script>
+        async function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            let selections = [];
+
+            // Obtiene todas las selecciones de las casillas de verificación
+            const sections = [
+                { name: 'basic', title: 'Analítica básica' },
+                { name: 'admission', title: 'Analítica de ingreso' },
+                { name: 'lumbar', title: 'Punción lumbar' },
+                { name: 'hematology', title: 'Analítica hematología' },
+                { name: 'determination', title: 'Analítica extensa' }
+            ];
+
+            sections.forEach(section => {
+                const checkedBoxes = document.querySelectorAll(`input[name="${section.name}"]:checked`);
+                if (checkedBoxes.length > 0) {
+                    selections.push(`${section.title}:`);
+                    checkedBoxes.forEach(box => {
+                        selections.push(` - ${box.value}`);
+                    });
+                    selections.push(''); // Añadir espacio entre secciones
+                }
+            });
+
+            // Comienza a agregar el texto al PDF
+            doc.text('Selección de Analíticas:', 10, 10);
+            selections.forEach((line, index) => {
+                doc.text(line, 10, 20 + (index * 10));
+            });
+
+            doc.save('seleccion_analiticas.pdf');
+        }
+    </script>
+
+</body>
+</html>
+
